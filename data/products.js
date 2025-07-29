@@ -29,8 +29,8 @@ class Product {
     this.name = productDetails.name;
     this.rating = productDetails.rating;
     this.priceCents = productDetails.priceCents;
-  };
 
+  };
 
   getStarsUrl() {
     return `images/ratings/rating-${this.rating.stars * 10}.png`;
@@ -38,6 +38,31 @@ class Product {
 
   getPrice() {
     return `$${formatCurrency(this.priceCents)}`;
+  };
+
+  extraInfoHTML() {
+      
+    return '';
+  };
+};
+
+
+//extends Product means Clothing will inherit all methods/attributes of the Product class
+class Clothing extends Product {
+
+  sizeChartLink;
+
+  //will run parents constructor by default
+  constructor(productDetails) {
+
+    super(productDetails);//calls the constructor of the parent class
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+
+  extraInfoHTML() {
+
+    //super.extraInfoHTML(); would call the parent version
+    return `<a href = "${this.sizeChartLink}" target = "_blank">Size Chart</a>`
   };
 };
 
@@ -703,5 +728,9 @@ export const products = [
     ]
   }
 ].map((productDetails) => {
+
+  if (productDetails.type === "clothing") {
+    return new Clothing(productDetails);
+  }
   return new Product(productDetails);
 });
