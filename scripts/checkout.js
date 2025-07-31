@@ -11,9 +11,9 @@ async function loadPage() {
     //await will make the function wait for asyncrynois code to finish
     await loadProductsFetch();
 
-    await new Promise((resolve) => {
+    const value = await new Promise((resolve) => {
         loadCart(() => {
-            resolve();
+            resolve('value3');
         });
     });
 
