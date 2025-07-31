@@ -6,6 +6,38 @@ import {loadCart} from "../data/cart.js";
 //import '../data/backend-practice.js';
 
 
+async function loadPage() {
+
+    //await will make the function wait for asyncrynois code to finish
+    await loadProductsFetch();
+
+    await new Promise((resolve) => {
+        loadCart(() => {
+            resolve();
+        });
+    });
+
+    renderOrderSummary();
+    renderPaymentSummary();
+};
+
+loadPage();
+
+/*
+//async makes a function return a promise
+async function loadPage() {
+
+    console.log('Load Page');
+    return 'value2'
+};
+loadPage((value) => {
+    console.log('next step');
+    console.log(value);
+});
+*/
+
+
+/*
 //waits for all promises to finish before going to next step
 Promise.all([
 
@@ -21,7 +53,7 @@ Promise.all([
     renderOrderSummary();
     renderPaymentSummary();
 });
-
+*/
 
 //promise will run the function it's given immediately
 //resolve allows you to control when to go to the next step
