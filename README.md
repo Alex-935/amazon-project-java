@@ -17,3 +17,15 @@
   - Cart in the checkout also updates
   
 <img width="1136" height="633" alt="Image" src="https://github.com/user-attachments/assets/73e66e52-4099-4a13-bd78-274d8d1f0aa6" />
+
+- Jasmine used for automatic testing:
+
+<img width="1051" height="869" alt="Image" src="https://github.com/user-attachments/assets/87cefd65-a871-4ca0-865f-c3a8884ffe62" />
+
+- Promises used to deal with asynchronous code:
+
+<img width="848" height="592" alt="Image" src="https://github.com/user-attachments/assets/880f7d5b-347b-4d22-8641-698a69471393" />
+
+- JavaScript used to generate HTML:
+
+<img width="794" height="547" alt="Image" src="https://github.com/user-attachments/assets/9ec7153b-8c69-47a4-9203-be49126b78fc" />
